@@ -96,6 +96,9 @@ class BaseUploader {
         case .imgur:
             ImgurUploader.shared.upload(url)
             break
+        case .minio:
+            AmazonS3Uploader.shared.uploadToMinio(url)
+            break
         }
     }
     
@@ -151,6 +154,9 @@ class BaseUploader {
         case .imgur:
             ImgurUploader.shared.upload(data)
             break
+        case .minio:
+            AmazonS3Uploader.shared.uploadToMinio(data)
+            break
         }
     }
     
@@ -186,6 +192,8 @@ class BaseUploader {
             return AmazonS3Uploader.fileExtensions
         case .imgur:
             return ImgurUploader.fileExtensions
+        case .minio:
+            return AmazonS3Uploader.fileExtensions
         }
     }
     

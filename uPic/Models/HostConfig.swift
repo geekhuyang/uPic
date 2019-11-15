@@ -79,6 +79,8 @@ class HostConfig: NSObject, Codable {
             return AmazonS3HostConfig()
         case .imgur:
             return ImgurHostConfig()
+        case .minio:
+            return AmazonS3HostConfig()
         }
     }
 
@@ -125,6 +127,9 @@ class HostConfig: NSObject, Codable {
             break
         case .imgur:
             config = ImgurHostConfig.deserialize(str: str)
+            break
+        case .minio:
+            config = AmazonS3HostConfig.deserialize(str: str)
             break
         }
 

@@ -76,6 +76,7 @@
 		167DDBED22C76F6600B03357 /* GithubHostConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167DDBEC22C76F6600B03357 /* GithubHostConfig.swift */; };
 		167DDBEF22C7722200B03357 /* GithubUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167DDBEE22C7722200B03357 /* GithubUtil.swift */; };
 		167DDBF122C7784900B03357 /* GithubConfigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167DDBF022C7784900B03357 /* GithubConfigView.swift */; };
+		167E3584237E85D20049603C /* MinioConfigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167E3583237E85D20049603C /* MinioConfigView.swift */; };
 		1683573C22DB0D0800985B10 /* CustomConfigSheetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1683573B22DB0D0800985B10 /* CustomConfigSheetController.swift */; };
 		1685AA3522DEC943008FBF1D /* FlippedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1685AA3422DEC943008FBF1D /* FlippedView.swift */; };
 		1685AA3722DEEE6C008FBF1D /* CustomHostUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1685AA3622DEEE6C008FBF1D /* CustomHostUtil.swift */; };
@@ -211,6 +212,7 @@
 		167DDBEC22C76F6600B03357 /* GithubHostConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubHostConfig.swift; sourceTree = "<group>"; };
 		167DDBEE22C7722200B03357 /* GithubUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubUtil.swift; sourceTree = "<group>"; };
 		167DDBF022C7784900B03357 /* GithubConfigView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubConfigView.swift; sourceTree = "<group>"; };
+		167E3583237E85D20049603C /* MinioConfigView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinioConfigView.swift; sourceTree = "<group>"; };
 		1683573B22DB0D0800985B10 /* CustomConfigSheetController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomConfigSheetController.swift; sourceTree = "<group>"; };
 		1685AA3422DEC943008FBF1D /* FlippedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlippedView.swift; sourceTree = "<group>"; };
 		1685AA3622DEEE6C008FBF1D /* CustomHostUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHostUtil.swift; sourceTree = "<group>"; };
@@ -366,6 +368,7 @@
 		1646B80F22C7C485009271DF /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				167E3583237E85D20049603C /* MinioConfigView.swift */,
 				167620EF23081DC0008F8363 /* ImgurConfigView.swift */,
 				167D08A622ED88C2000F3BC0 /* AmazonS3ConfigView.swift */,
 				1657019E22C897A400C57EE9 /* WeiboConfigView.swift */,
@@ -907,6 +910,7 @@
 				1660FCBA22C11C2300372950 /* TencentHostConfig.swift in Sources */,
 				16248E32230673B6002131BB /* NotificationExt.swift in Sources */,
 				167DDBEF22C7722200B03357 /* GithubUtil.swift in Sources */,
+				167E3584237E85D20049603C /* MinioConfigView.swift in Sources */,
 				167620F023081DC0008F8363 /* ImgurConfigView.swift in Sources */,
 				1685AA3722DEEE6C008FBF1D /* CustomHostUtil.swift in Sources */,
 				68BBB99780D7F4586458D4F5 /* AmazonS3Util.swift in Sources */,

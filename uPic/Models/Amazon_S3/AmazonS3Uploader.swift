@@ -15,7 +15,7 @@ class AmazonS3Uploader: BaseUploader {
     static let shared = AmazonS3Uploader()
     static let fileExtensions: [String] = []
 
-    func _upload(_ fileUrl: URL?, fileData: Data?) {
+    func _upload(_ fileUrl: URL?, fileData: Data?, isMinio: Bool = false) {
         guard let host = ConfigManager.shared.getDefaultHost(), let data = host.data else {
             super.faild(errorMsg: "There is a problem with the map bed configuration, please check!".localized)
             return
@@ -31,9 +31,9 @@ class AmazonS3Uploader: BaseUploader {
         let secretKey = config.secretKey!
         let hostSaveKey = HostSaveKey(rawValue: config.saveKey!)!
         let domain = config.domain!
-        let region = AmazonS3Region.formatRegion(config.region)
-
-        let url = AmazonS3Util.computeUrl(bucket: bucket, region: region)
+        let region = isMinio ? "US_EAST_1" : AmazonS3Region.formatRegion(config.region)
+        
+        let url = isMinio ? "\(domain)/\(bucket)" : AmazonS3Util.computeUrl(bucket: bucket, region: region)
 
         if url.isEmpty {
             super.faild(errorMsg: "There is a problem with the map bed configuration, please check!".localized)
@@ -103,14 +103,13 @@ class AmazonS3Uploader: BaseUploader {
                 multipartFormData.append(fileUrl!, withName: "file", fileName: fileName, mimeType: mimeType)
             }
         }
-
-
+        
         AF.upload(multipartFormData: multipartFormDataGen, to: url).validate().uploadProgress { progress in
             super.progress(percent: progress.fractionCompleted)
         }.response(completionHandler: { response -> Void in
             switch response.result {
             case .success(_):
-                if domain.isEmpty {
+                if (domain.isEmpty || isMinio) {
                     super.completed(url: "\(url)/\(key)\(config.suffix ?? "")")
                 } else {
                     super.completed(url: "\(domain)/\(key)\(config.suffix ?? "")")
@@ -128,12 +127,20 @@ class AmazonS3Uploader: BaseUploader {
         })
 
     }
+    
+    func uploadToMinio(_ fileUrl: URL) {
+        self._upload(fileUrl, fileData: nil, isMinio: true)
+    }
+    
+    func uploadToMinio(_ fileData: Data) {
+        self._upload(nil, fileData: fileData, isMinio: true)
+    }
 
     func upload(_ fileUrl: URL) {
-        self._upload(fileUrl, fileData: nil)
+        self._upload(fileUrl, fileData: nil, isMinio: false)
     }
 
     func upload(_ fileData: Data) {
-        self._upload(nil, fileData: fileData)
+        self._upload(nil, fileData: fileData, isMinio: false)
     }
 }
