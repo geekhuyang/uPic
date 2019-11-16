@@ -30,9 +30,12 @@ class AmazonS3Uploader: BaseUploader {
         let accessKey = config.accessKey!
         let secretKey = config.secretKey!
         let hostSaveKey = HostSaveKey(rawValue: config.saveKey!)!
-        let domain = config.domain!
+        var domain = config.domain!
         let region = isMinio ? "US_EAST_1" : AmazonS3Region.formatRegion(config.region)
         
+        if domain.hasSuffix("/") {
+            domain.removeLast()
+        }
         let url = isMinio ? "\(domain)/\(bucket)" : AmazonS3Util.computeUrl(bucket: bucket, region: region)
 
         if url.isEmpty {
