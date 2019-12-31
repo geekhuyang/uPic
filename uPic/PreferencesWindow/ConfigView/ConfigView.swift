@@ -53,6 +53,9 @@ class ConfigView: NSView {
     static func createConfigView(parentView: NSView, item: Host) {
         // MARK: 根据当前选择的图床，创建对应的配置界面
         switch item.type {
+        case .smms:
+            parentView.addSubview(SmmsConfigView(frame: parentView.frame, host: item))
+            break
         case .custom:
             parentView.addSubview(CustomConfigView(frame: parentView.frame, host: item))
             break

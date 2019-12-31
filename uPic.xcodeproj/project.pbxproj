@@ -105,6 +105,9 @@
 		16BDDDFF22EA96AE0080E467 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16BDDDFE22EA96AE0080E467 /* Assets.xcassets */; };
 		16BDDE0322EAA2920080E467 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16BDDE0222EAA2920080E467 /* Assets.xcassets */; };
 		16C176F523A208A80089B933 /* NSImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C176F423A208A80089B933 /* NSImage+Extension.swift */; };
+		16C2D8E823BA53D800E2B91E /* SmmsHostConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C2D8E723BA53D800E2B91E /* SmmsHostConfig.swift */; };
+		16C2D8EA23BA541E00E2B91E /* SmmsVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C2D8E923BA541E00E2B91E /* SmmsVersion.swift */; };
+		16C2D8EC23BA591D00E2B91E /* SmmsConfigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C2D8EB23BA591D00E2B91E /* SmmsConfigView.swift */; };
 		16D20B5523838AB1006D8D01 /* BaiduRegion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D20B54238388D8006D8D01 /* BaiduRegion.swift */; };
 		16D20B5623838AB5006D8D01 /* BaiduHostConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D20B532383889F006D8D01 /* BaiduHostConfig.swift */; };
 		16D20B58238390F2006D8D01 /* BaiduUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D20B57238390F2006D8D01 /* BaiduUploader.swift */; };
@@ -268,6 +271,9 @@
 		16BDDDFE22EA96AE0080E467 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		16BDDE0222EAA2920080E467 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		16C176F423A208A80089B933 /* NSImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSImage+Extension.swift"; sourceTree = "<group>"; };
+		16C2D8E723BA53D800E2B91E /* SmmsHostConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmmsHostConfig.swift; sourceTree = "<group>"; };
+		16C2D8E923BA541E00E2B91E /* SmmsVersion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmmsVersion.swift; sourceTree = "<group>"; };
+		16C2D8EB23BA591D00E2B91E /* SmmsConfigView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmmsConfigView.swift; sourceTree = "<group>"; };
 		16D20B532383889F006D8D01 /* BaiduHostConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaiduHostConfig.swift; sourceTree = "<group>"; };
 		16D20B54238388D8006D8D01 /* BaiduRegion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaiduRegion.swift; sourceTree = "<group>"; };
 		16D20B57238390F2006D8D01 /* BaiduUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaiduUploader.swift; sourceTree = "<group>"; };
@@ -404,6 +410,7 @@
 		1646B80F22C7C485009271DF /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				16C2D8EB23BA591D00E2B91E /* SmmsConfigView.swift */,
 				16D20B5B238392C9006D8D01 /* BaiduConfigView.swift */,
 				167620EF23081DC0008F8363 /* ImgurConfigView.swift */,
 				167D08A622ED88C2000F3BC0 /* AmazonS3ConfigView.swift */,
@@ -525,6 +532,8 @@
 			isa = PBXGroup;
 			children = (
 				1602ED9822ADF43800AA8638 /* SmmsUploader.swift */,
+				16C2D8E723BA53D800E2B91E /* SmmsHostConfig.swift */,
+				16C2D8E923BA541E00E2B91E /* SmmsVersion.swift */,
 			);
 			path = Smms;
 			sourceTree = "<group>";
@@ -933,6 +942,7 @@
 				167DDBED22C76F6600B03357 /* GithubHostConfig.swift in Sources */,
 				1646B80822C79349009271DF /* GiteeUtil.swift in Sources */,
 				1660FCBF22C1211900372950 /* TencentConfigView.swift in Sources */,
+				16C2D8E823BA53D800E2B91E /* SmmsHostConfig.swift in Sources */,
 				1646B80A22C79483009271DF /* GiteeConfigView.swift in Sources */,
 				1660FCBB22C11C7200372950 /* TencentUploader.swift in Sources */,
 				167D08AE22ED8A58000F3BC0 /* AliyunUploader.swift in Sources */,
@@ -949,10 +959,12 @@
 				1657019922C8922400C57EE9 /* WeiboHostConfig.swift in Sources */,
 				160CAA2522B1ED6F00D04FBD /* PreferenceKey.swift in Sources */,
 				167D08B022ED8A6C000F3BC0 /* AliyunUtil.swift in Sources */,
+				16C2D8EA23BA541E00E2B91E /* SmmsVersion.swift in Sources */,
 				4B112CA723603DBB009E79B4 /* HistoryThumbnailFlowLayout.swift in Sources */,
 				169F073722AF4549008E8525 /* AdvancedPreferencesViewController.swift in Sources */,
 				1646B80622C79337009271DF /* GiteeUploader.swift in Sources */,
 				16068C7522AEC1D1004D39B7 /* PreferencesViewController.swift in Sources */,
+				16C2D8EC23BA591D00E2B91E /* SmmsConfigView.swift in Sources */,
 				161C3BE122C483380092114F /* CustomUploader.swift in Sources */,
 				169F073A22AF4549008E8525 /* AboutPreferencesViewController.swift in Sources */,
 				4BEFD811238B738E00BBE64D /* HistoryThumbnailConstant.swift in Sources */,
